@@ -47,7 +47,7 @@ public class IpLocator {
     }
 
     private static long getIpNumber(InetAddress bar) {
-        ByteBuffer buffer = ByteBuffer.allocate(Long.BYTES).order(ByteOrder.BIG_ENDIAN);
+        ByteBuffer buffer = ByteBuffer.allocate(1024).order(ByteOrder.BIG_ENDIAN);
         buffer.put(new byte[] { 0,0,0,0 });
         buffer.put(bar.getAddress());
         buffer.position(0);
